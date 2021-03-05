@@ -187,8 +187,8 @@ export default abstract class Command {
     }
   }
 
-  protected _help() {
-    const HelpClass = getHelpClass(this.config)
+  protected async _help() {
+    const HelpClass = await getHelpClass(this.config)
     const help: HelpBase = new HelpClass(this.config)
     const cmd = Config.Command.toCached(this.ctor as any as Config.Command.Class)
     if (!cmd.id) cmd.id = ''

@@ -42,8 +42,8 @@ export class Main extends Command {
     return false
   }
 
-  protected _help() {
-    const HelpClass = getHelpClass(this.config)
+  protected async _help() {
+    const HelpClass = await getHelpClass(this.config)
     const help: HelpBase = new HelpClass(this.config)
     help.showHelp(this.argv)
     return this.exit(0)
