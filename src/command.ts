@@ -196,7 +196,7 @@ export default abstract class Command {
     topics = topics.filter((t: any) => !t.hidden)
     topics = sortBy(topics, (t: any) => t.name)
     topics = uniqBy(topics, (t: any) => t.name)
-    help.showCommandHelp(cmd, topics)
+    await help.showCommandHelp(cmd, topics)
     return this.exit(0)
   }
 

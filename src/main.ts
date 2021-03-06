@@ -45,7 +45,7 @@ export class Main extends Command {
   protected async _help() {
     const HelpClass = await getHelpClass(this.config)
     const help: HelpBase = new HelpClass(this.config)
-    help.showHelp(this.argv)
+    await help.showHelp(this.argv)
     return this.exit(0)
   }
 }
